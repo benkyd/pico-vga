@@ -13,7 +13,6 @@ int main()
     while (1) 
     {
 
-        printf("Hello, world!");
         gpio_put(OUTPIN, 1);
 
     }
