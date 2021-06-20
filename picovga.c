@@ -1,22 +1,19 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 
+#include "hardware/pio.h"
+
+// "assembled program"
+#include "video.pio.h"
+
 const uint OUTPIN = 1;
 
 int main()
 {
-    stdio_init_all();
 
-    gpio_init(OUTPIN);
-    gpio_set_dir(OUTPIN, 1);
+    PIO pio = pio0;
 
-    while (1) 
-    {
-
-        gpio_put(OUTPIN, 1);
-
-    }
-
+    
 
     return 0;
 }
