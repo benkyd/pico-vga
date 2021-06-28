@@ -1,6 +1,9 @@
+#ifndef PICOVGA_VGA_H_
+#define PICOVGA_VGA_H_
+
 #include "pico/types.h"
 
-typedef struct scanvideo_timing {
+typedef struct video_timing {
     uint32_t clock_freq;
 
     uint16_t h_active;
@@ -20,27 +23,19 @@ typedef struct scanvideo_timing {
     uint8_t clock_polarity;
 
     uint8_t enable_den;
-} scanvideo_timing_t;
+} video_timing_t;
 
-const scanvideo_timing_t vga_timing_800x600_60 =
-{
-        .clock_freq = 38400000,
+const video_timing_t vga_timing_800x600_60;
 
-        .h_active = 800,
-        .v_active = 600,
 
-        .h_front_porch = 4 * 8,
-        .h_pulse = 10 * 8,
-        .h_total = 128 * 8,
-        .h_sync_polarity = 0,
+// typedef struct video {
+//     uint16_t* 
+// } video_t;
 
-        .v_front_porch = 1,
-        .v_pulse = 3,
-        .v_total = 625,
-        .v_sync_polarity = 0,
+void vga_init(const video_timing_t* timing);
 
-        .enable_clock = 0,
-        .clock_polarity = 0,
+void vga_start();
 
-        .enable_den = 0
-};
+void vga_swap_buffers();
+
+#endif

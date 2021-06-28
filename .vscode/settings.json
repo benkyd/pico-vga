@@ -15,6 +15,15 @@
     },
     "files.associations": {
       "stdlib.h": "c",
-      "pio.h": "c"
+      "pio.h": "c",
+      "stdio.h": "c",
+      "vga.h": "c",
+      "video.pio.h": "c",
+      "pico.h": "c",
+      "config.h": "c",
+      "config_autogen.h": "c",
+      "pwm.h": "c",
+      "dma.h": "c",
+      "irq.h": "c"
     },
 }

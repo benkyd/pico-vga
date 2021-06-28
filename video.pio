@@ -1,13 +1,10 @@
 .program video
 
-; recieve one word from TX FIFO (to the OSR)
-; stall when FIFO empty
-; pop the lsb in the out pin
+; write 5 bits from the TX FIFO to the pin mask 
 
-loop:
-    pull
-    out pins, 1
-    jmp loop
+.wrap_target
+    out pins 5
+.wrap
 
 % c-sdk {
 static inline void video_program_init(PIO pio, uint sm, uint offset, uint pin) {
