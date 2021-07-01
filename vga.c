@@ -38,7 +38,7 @@ const video_timing_t vga_timing_800x600_60 =
 void vga_init(const video_timing_t* timing)
 {
     
-    printf("Pixel Clock Frequency %i", timing->clock_freq);
+    printf("Pixel Clock Frequency %i\n", timing->clock_freq);
 
 
 }

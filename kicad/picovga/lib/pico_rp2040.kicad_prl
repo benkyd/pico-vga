@@ -6,10 +6,10 @@
     "high_contrast_mode": 0,
     "net_color_mode": 1,
     "opacity": {
-      "pads": 0.8500000238418579,
+      "pads": 1.0,
       "tracks": 1.0,
       "vias": 1.0,
-      "zones": 0.36000001430511475
+      "zones": 0.6
     },
     "ratsnest_display_mode": 0,
     "selection_filter": {
@@ -60,11 +60,11 @@
       37,
       38
     ],
-    "visible_layers": "ffcffff_ffffffff",
+    "visible_layers": "fffffff_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
-    "filename": "picovga.kicad_prl",
+    "filename": "pico_rp2040.kicad_prl",
     "version": 2
   },
   "project": {
