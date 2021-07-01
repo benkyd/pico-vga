@@ -27,7 +27,6 @@ typedef struct video_timing {
 
 const video_timing_t vga_timing_800x600_60;
 
-
 // typedef struct video {
 //     uint16_t* 
 // } video_t;

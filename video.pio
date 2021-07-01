@@ -1,13 +1,15 @@
+; Copyright Benjamin Kyd 2021 All Rights Reserved
+
 .program video
 
 ; write 5 bits from the TX FIFO to the pin mask 
 
 .wrap_target
-    out pins 5
+    out pins 2
 .wrap
 
 % c-sdk {
-static inline void video_program_init(PIO pio, uint sm, uint offset, uint pin) {
+static inline void video_program_init(PIO pio, uint sm, uint offset, uint pin, float clk_div) {
     pio_sm_config c = video_program_get_default_config(offset);
 
     // Map the state machine's OUT pin group to one pin, namely the `pin`

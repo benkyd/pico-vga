@@ -12,10 +12,11 @@ include(pico_sdk_import.cmake)
 
 project(pico_vga C CXX ASM)
 
+add_executable(pico_vga)
+
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-add_executable(pico_vga)
 
 pico_set_program_name(pico_vga "pico_vga")
 pico_set_program_version(pico_vga "0.1")
@@ -34,10 +35,8 @@ target_sources(pico_vga PRIVATE
 target_link_libraries(pico_vga 
     pico_stdlib 
     hardware_pio
-    hardware_pwm
     hardware_dma
     hardware_irq
     )
 
 pico_add_extra_outputs(pico_vga)
-

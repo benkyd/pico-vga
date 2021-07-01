@@ -1,11 +1,10 @@
-// Copyright Benjamin Kyd 2021 All Rights Reserver=d
+// Copyright Benjamin Kyd 2021 All Rights Reserved
 
 #include <stdio.h>
 
 #include "pico/stdlib.h"
 #include "hardware/clocks.h"
 #include "hardware/pio.h"
-#include "hardware/pwm.h"
 #include "hardware/dma.h"
 #include "hardware/irq.h"
 
@@ -35,10 +34,26 @@ const video_timing_t vga_timing_800x600_60 =
         .enable_den = 0
 };
 
+#define PIN_START 8
+#define PIN_COUNT 2
+
 void vga_init(const video_timing_t* timing)
 {
+    // Calculate the PIO clock divider
+    uint sys_clock = frequency_count_khz(CLOCKS_FC0_SRC_VALUE_CLK_SYS);
+    float clock_div = ((float)sys_clock * 1000.f) / (float)timing->clock_freq;
+
+    printf("System clock frequency %i\n", sys_clock);
+    printf("Pixel clock frequency %i\n", timing->clock_freq);
+    printf("Clock divider %f\n", clock_div);
+ 
+
+
+    // setup 2 buffers with DMA
+    // setup swap
     
-    printf("Pixel Clock Frequency %i\n", timing->clock_freq);
+    // use pin mask (5 pins for 1 bit colour, 12 for 4)
+
 
 
 }
