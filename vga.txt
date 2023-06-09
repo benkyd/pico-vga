@@ -1,5 +1,0 @@
-WHITE - VSYNC - 
-BLACK - HSYNC - 
-RED   - VGA_R - 
-GREEN - VGA_G - 
-BLUE  - VGA_B - 
