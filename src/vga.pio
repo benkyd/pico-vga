@@ -1,0 +1,4 @@
+.program vga
+loop:
+    out pins, 2
+    jmp loop
